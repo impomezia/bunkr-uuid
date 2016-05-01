@@ -1,7 +1,7 @@
 {
   "name": "bunkr-uuid",
-  "version": "1.0.0",
-  "description": "Simple module to generate and validate Base64 encoded (URL Safe) UUIDs with CRC16 CCITT checksum.",
+  "version": "2.0.0",
+  "description": "Simple module to generate and validate Base58 encoded UUIDs with CRC8 checksum.",
   "keywords": [
     "crc",
     "uuid"
@@ -21,10 +21,12 @@
   },
   "homepage": "https://github.com/impomezia/bunkr-uuid#readme",
   "dependencies": {
+    "bs58": "^3.0.0",
     "crc": "^3.4.0",
     "node-uuid": "^1.4.7"
   },
   "devDependencies": {
+    "benchmark": "^2.1.0",
     "chai": "^3.5.0",
     "mocha": "^2.4.5"
   }

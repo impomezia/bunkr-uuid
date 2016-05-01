@@ -3,19 +3,21 @@
 const uuid   = require('../index');
 const expect = require('chai').expect;
 
+
 describe('Generate', () => {
   it('generate', () => {
     const result = uuid.generate();
 
     expect(result).to.be.a('string');
-    expect(result).to.have.length(24);
+    expect(result).to.have.length.within(22, 24);
+    expect(uuid.validate(result)).to.be.true;
   });
 });
 
 
 describe('Validate', () => {
   it('valid', () => {
-    const tests = ['yR-VYTPRQQeMifQI4i5jw4xp', 'L-eYdHB_QzW57leOREOEQE_G', '1ieeoWhXSL+nN8Sd4dlDqbn0', 'dA4VlzonS8OAj10CcDpsaTcN'];
+    const tests = ['qEfn2niF1nUxNdfekbu9gv', '38ubRGTTsZjS1BTEtFVDovm', '35sgMUdMSS3QkBgSqXqMPLiS'];
 
     for (let i of tests) {
       expect(uuid.validate(i)).to.be.true;
@@ -24,7 +26,7 @@ describe('Validate', () => {
 
 
   it('invalid', () => {
-    const tests = [null, '123', 'yR-VYTPRQQeMifQI4i5jw4xp+', 'yR-VYTPRQQeMIfQI4i5jw4xp'];
+    const tests = [null, '123', 'qEfn2niF1nUxNdfekbu9gv2n', 'yR-VYTPRQQeMIfQI4i5jw4xp'];
 
     for (let i of tests) {
       expect(uuid.validate(i)).to.be.false;

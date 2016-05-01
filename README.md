@@ -1,6 +1,7 @@
 # bunkr-uuid
 
-Simple module to generate and validate Base64 encoded (URL Safe) UUIDs with CRC16 CCITT checksum.
+Simple module to generate and validate Base58 encoded UUIDs with CRC8 checksum.
+Result length is in the range of 22 to 24 characters.
 
 
 # Install
@@ -14,9 +15,9 @@ Simple module to generate and validate Base64 encoded (URL Safe) UUIDs with CRC1
 const uuid = require('bunkr-uuid');
 
 uuid.generate();
-// dA4VlzonS8OAj10CcDpsaTcN
+// 31dh27vxYY8qTawfPHeqAZJc
 
-uuid.validate('dA4VlzonS8OAj10CcDpsaTcN')
+uuid.validate('31dh27vxYY8qTawfPHeqAZJc')
 // true
 ```
 
